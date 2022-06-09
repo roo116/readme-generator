@@ -11,8 +11,19 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+// this is where the tempplate literal will go
 function generateMarkdown(data) {
   return `# ${data.title}
+
+## Table of Contents
+
+
+
+
+
+## Tests
+
+${data.test}
 
 `;
 }
