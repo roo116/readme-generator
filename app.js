@@ -11,44 +11,52 @@ const inquirer = require("inquirer");
 // TODO: Create an array of questions for user input
 /* Pass your questions in here */
 var questions = [
-{
+  {
     type: "input",
     name: "title",
-    message: "What is the title of you project?"
-},
-{
+    message: "What is the title of you project?",
+    validate: titleInput => {
+      if (titleInput) {
+        return true;
+      } else {
+        console.log('Please enter the title of your project.');
+        return false;
+      }
+    }
+  },
+  {
     type: "input",
     name: "description",
     message: "Provide a description of your project (Required)"
-},
-{
+  },
+  {
     type: "input",
     name: "install",
-    message: "Provide installation insstructions (Required)"
-},
-{
+    message: "Provide installation instructions (Required)"
+  },
+  {
     type: "input",
     name: "usage",
-    message: "Any usage restrictions? (Required)"
-},
-{
+    message: "Provide usage information? (Required)"
+  },
+  {
     type: "list",
     name: "license",
     message: "Provide licensse info",
     defaul: "ULC",
     choices: ["MIT", "GPL", "BSD", "ULC"]
-},
-{
+  },
+  {
     type: "input",
     name: "contributors",
     message: "Please list contributors"
     //probably needs to be pushed into an array
-},
-{
+  },
+  {
     type: "input",
     name: "test",
     message: "please enter test command(s)"
-}
+  }
 ];
 
 // const promptUser = () => {
@@ -115,7 +123,7 @@ var questions = [
 
 // TODO: Create a function to initialize app
 function init() {
-   inquirer
+  inquirer
     .prompt(questions)
     .then((answers) => {
       // Use user feedback for... whatever!!

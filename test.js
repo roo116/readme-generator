@@ -1,26 +1,7 @@
-const inquirer = require('inquirer');
-
-const questions = ["what is the title of your project?"]
+const fs = require("fs");
 
 
-inquirer
-    .prompt([
-        /* Pass your questions in here */
-        {
-            type: "input",
-            name: "title",
-            message: questions[0]
-        }])
-    .then((answers) => {
-        // Use user feedback for... whatever!!
-        // answers.push[answers];
-        console.log(answers);
-        console.log(process)
-    })
-    .catch((error) => {
-        if (error.isTtyError) {
-            // Prompt couldn't be rendered in the current environment
-        } else {
-            // Something else went wrong
-        }
-    });
+// Creates /tmp/a/apple, regardless of whether `/tmp` and /tmp/a exist.
+fs.mkdirSync('./dist', { recursive: true }, (err) => {
+    if (err) throw err;
+});
