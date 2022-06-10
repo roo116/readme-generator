@@ -2,7 +2,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const fileName = "./README.mew"
+
+
 
 // mock data for testing
 const mockdata = {
@@ -131,7 +132,36 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, mockdata) { }
+// function writeToFile(fileName, answers) { }
+//first I am going to create a dist directory so this doesn't overwrite any existing README.md
+fs.mkdirSync("./dist", { recursive: true }, (err) => {
+    if (err) throw err
+})
+
+const writeToFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./dist/README.md", fileContent, err => {
+            //if error then reject
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            // if no error, hooray!!!!
+            resolve({
+                ok: true,
+                message: "File Created",
+
+            })
+
+        })
+
+    })
+}
+
+
+
+
 
 
 // TODO: Create a function to initialize app
@@ -163,7 +193,14 @@ promptUser = () => {
             // Use user feedback for... whatever!!
             console.log(answers);
 
+            return generateMarkdown(answers)
+
             //         //use writeToFile function here
+
+
+
+        }).then(fileContent => {
+            writeToFile(fileContent);
         })
         .catch((error) => {
             if (error.isTtyError) {
