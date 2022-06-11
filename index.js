@@ -4,21 +4,6 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
-
-// mock data for testing
-const mockdata = {
-    title: 'ReadMe generator',
-    description: 'Command-line application to create a README.md file',
-    install: 'npm i readme-generator',
-    usage: 'Use at your own risk',
-    contribution: 'If you can contribute some dollars that would be great!!',
-    test: 'Testing if for wimps and cowards',
-    license: 'ULC',
-    username: 'roo116',
-    email: 'hillkarl03@gmail.com',
-    qsInstructions: 'call my email and leave a text message'
-};
-
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -87,8 +72,8 @@ const questions = [
         type: "list",
         name: "license",
         message: "Provide licensse info",
-        defaul: "ULC",
-        choices: ["MIT", "GPL", "BSD", "ULC"]
+        choices: ["MIT", "GPL", "BSD", "ISC", "none"],
+        default: "none"
     },
     {
         type: "input",
@@ -117,10 +102,11 @@ const questions = [
         }
     },
     {
-        type: "input",
-        name: "qsInstructions",
-        message: "Please provide how users may contact you with questions. (Required)",
-        validate: qsInput => {
+        type: 'list',
+        message: 'Please provide how users may contact you with questions. (Required)',
+        name: 'contact',
+        choices: ['email', 'github'],
+        validate: contactInput => {
             if (qsInput) {
                 return true;
             } else {
@@ -144,6 +130,7 @@ const writeToFile = fileContent => {
             //if error then reject
             if (err) {
                 reject(err);
+                console.log("something went wrong")
                 return;
             }
 
@@ -151,13 +138,12 @@ const writeToFile = fileContent => {
             resolve({
                 ok: true,
                 message: "File Created",
+            });
 
-            })
+        });
 
-        })
-
-    })
-}
+    });
+};
 
 
 
