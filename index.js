@@ -146,15 +146,18 @@ promptUser = () => {
 }
 
 function init() {
+    // remove README if it's there  
+    if (fs.existsSync('./dist/README.md')) {
+        fs.unlinkSync('./dist/README.md', function (err) {
+            if (err) throw err
+        })
+    } else {
     // make a dist directory
     fs.mkdirSync("./dist", { recursive: true }, (err) => {
         if (err) throw err
     })
-    // remove README if it's there    
-    fs.unlinkSync('./dist/README.md', function (err) {
-        if (err) throw err
-        console.log("README cleared")
-    })
+    }
+
 }
 init()
 promptUser()
