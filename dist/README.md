@@ -1,6 +1,6 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   
-# Project Title - test2 - clearing out readme and with license
+# Project Title - test 2 - with both none license code and license code testing none.
   
   
 ## Project Description
@@ -21,7 +21,7 @@ test
 test
   
 ## License
-MIT
+
   
 ## Contributing
 test

@@ -35,25 +35,36 @@ const badgeArr = [{
 // };
 
 // var license = data.license;
+
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
 function getBadge(license) {
-    console.log("In getBadge")
     if (license === "none") {
-        console.log("no license")
         return ''
     }
     let result = badgeArr.find(n => n.licenseName === license);
-    console.log(result)
     const { licenseBadge } = result
-    console.log(licenseBadge)
     return licenseBadge
-    // const {licenseName, licenseBadge} = result;
+};
+
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function licenseSection(license) {
+    if (license === 'none') {
+        let section = ``
+        return section
+    }
+
+    let result = badgeArr.find(n => n.licenseName === license);
+    const { licenseName } = result
+    let section = `This is licensed under the ${licenseName} license. See the badge for the link to the license information.`
+    return section
 };
 
 
 function generateMarkdown(data) {
-    console.log("getting ready to generate MarkDown")
-    console.log(data.license)
-
 
     return `${getBadge(data.license)}
   
@@ -78,7 +89,7 @@ ${data.install}
 ${data.usage}
   
 ## License
-${data.license}
+${licenseSection(data.license)}
   
 ## Contributing
 ${data.contribution}
