@@ -43,7 +43,7 @@ function getBadge(license) {
     }
     let result = badgeArr.find(n => n.licenseName === license);
     console.log(result)
-    const { licenseName, licenseBadge } = result
+    const { licenseBadge } = result
     console.log(licenseBadge)
     return licenseBadge
     // const {licenseName, licenseBadge} = result;
@@ -61,7 +61,7 @@ function generateMarkdown(data) {
   
   
 ## Project Description
-    ${data.description}
+${data.description}
   
 ## Table of Contents
   - [Installation](#installation)
@@ -72,24 +72,24 @@ function generateMarkdown(data) {
   - [Questions](#questions)
   
 ## Installation
-    ${data.install}
+${data.install}
   
 ## Usage
-    ${data.usage}
+${data.usage}
   
 ## License
-    Licensed under the ${data.license} license.
+${data.license}
   
 ## Contributing
-    ${data.contribution}
+${data.contribution}
   
 ## Tests
-      ${data.test}
+${data.test}
   
 ## Questions
-If you have questions, reach out via email or GitHub
-Gitub:[GitHub Repository](https//github.com/${data.username})  
-Email: ${data.email}  
+If you have questions, reach out via email or GitHub  
+Gitub:  [GitHub Repository](https//github.com/${data.username})  
+Email:  ${data.email}  
   `;
 }
 

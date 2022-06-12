@@ -106,9 +106,6 @@ const questions = [
 // TODO: Create a function to write README file
 // function writeToFile(fileName, answers) { }
 //first I am going to create a dist directory so this doesn't overwrite any existing README.md
-fs.mkdirSync("./dist", { recursive: true }, (err) => {
-    if (err) throw err
-})
 
 const writeToFile = fileContent => {
     return new Promise((resolve, reject) => {
@@ -131,33 +128,6 @@ const writeToFile = fileContent => {
     });
 };
 
-
-
-
-
-
-// TODO: Create a function to initialize app
-// function init() {
-// inquirer
-//     .prompt(questions)
-//     .then((answers) => {
-//         // Use user feedback for... whatever!!
-//         console.log(answers);
-
-//         //use writeToFile function here
-//     })
-//     .catch((error) => {
-//         if (error.isTtyError) {
-//             // Prompt couldn't be rendered in the current environment
-//         } else {
-//             // Something else went wrong
-//         }
-//     });
-
-
-
-// Function call to initialize app
-// init();
 promptUser = () => {
     inquirer
         .prompt(questions)
@@ -183,21 +153,17 @@ promptUser = () => {
         });
 }
 
+function init() {
+    // make a dist directory
+    fs.mkdirSync("./dist", { recursive: true }, (err) => {
+        if (err) throw err
+    })
+    // remove README if it's there    
+    fs.unlinkSync('./dist/README.md', function (err) {
+        if (err) throw err
+        console.log("README cleared")
+    })
+}
+init()
 promptUser()
-
-
-
-
-// {
-//     title: 'ReadMe generator',
-//     description: 'Command-line application to create a README.md file',
-//     install: 'npm i readme-generator',
-//     usage: 'Testing if for wimps and cowards',
-//     license: 'ULC',
-//     username: 'roo116',
-//     email: 'hillkarl03@gmail.com',
-//     qsInstructions: 'call my email and leave a text message'
-//   }
-
-
 

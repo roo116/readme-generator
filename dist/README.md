@@ -1,10 +1,10 @@
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
-# Project Title - test2
+# Project Title - test2 - clearing out readme and with license
   
   
 ## Project Description
-    test2
+test
   
 ## Table of Contents
   - [Installation](#installation)
@@ -15,22 +15,22 @@
   - [Questions](#questions)
   
 ## Installation
-    test2
+test
   
 ## Usage
-    test2
+test
   
 ## License
-    Licensed under the none license.
+MIT
   
 ## Contributing
-    test2tes
+test
   
 ## Tests
-      test2
+test
   
 ## Questions
-If you have questions, reach out via email or GitHub
-Gitub:[GitHub Repository](https//github.com/fs)  
-Email: fs  
+If you have questions, reach out via email or GitHub  
+Gitub:  [GitHub Repository](https//github.com/test)  
+Email:  test  
   
