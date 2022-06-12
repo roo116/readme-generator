@@ -35,7 +35,7 @@ const badgeArr = [{
 // };
 
 // var license = data.license;
-function renderLicenseBadge(license) {
+function getBadge(license) {
     console.log("In getBadge")
     if (license === "none") {
         console.log("no license")
@@ -55,15 +55,15 @@ function generateMarkdown(data) {
     console.log(data.license)
 
 
-    return `${renderLicenseBadge(data.license)}
+    return `${getBadge(data.license)}
   
-  # Project Title - ${data.title}
+# Project Title - ${data.title}
   
   
-  ## Project Description
-      ${data.description}
+## Project Description
+    ${data.description}
   
-  ## Table of Contents
+## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
@@ -71,26 +71,25 @@ function generateMarkdown(data) {
   - [Tests](#tests)
   - [Questions](#questions)
   
-  ## Installation
-      ${data.install}
+## Installation
+    ${data.install}
   
-  ## Usage
-      ${data.usage}
+## Usage
+    ${data.usage}
   
-  ## License
-      Licensed under the ${data.license} license.
+## License
+    Licensed under the ${data.license} license.
   
-  ## Contributing
-      ${data.contribution}
+## Contributing
+    ${data.contribution}
   
-  ## Tests
+## Tests
       ${data.test}
   
-  ## Questions
-  [GitHub Repository](https//github.com/${data.username})
-  Email: ${data.email}
-  if you have questions, ${data.contact}
-  
+## Questions
+If you have questions, reach out via email or GitHub
+Gitub:[GitHub Repository](https//github.com/${data.username})  
+Email: ${data.email}  
   `;
 }
 
