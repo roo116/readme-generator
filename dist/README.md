@@ -1,10 +1,10 @@
-
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
   
-# Project Title - test 2 - with both none license code and license code testing none.
+# Project Title - test project
   
   
 ## Project Description
-test
+a great project that rocks!!
   
 ## Table of Contents
   - [Installation](#installation)
@@ -15,22 +15,22 @@ test
   - [Questions](#questions)
   
 ## Installation
-test
+install easily and successfully
   
 ## Usage
-test
+usage 
   
 ## License
-
+This is licensed under the GPL license. See the badge for the link to the license information.
   
 ## Contributing
-test
+help with pull requests
   
 ## Tests
-test
+testing 
   
 ## Questions
 If you have questions, reach out via email or GitHub  
-Gitub:  [GitHub Repository](https//github.com/test)  
-Email:  test  
+Gitub:  [GitHub Repository](https//github.com/roo116)  
+Email:  hillkarl03@gmail.com  
   

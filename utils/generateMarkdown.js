@@ -20,26 +20,12 @@ const badgeArr = [{
 }
 ]
 
-// mock data for testing
-// const data = {
-//     title: 'ReadMe generator',
-//     description: 'Command-line application to create a README.md file',
-//     install: 'npm i readme-generator',
-//     usage: 'Use at your own risk',
-//     contribution: 'If you can contribute some dollars that would be great!!',
-//     test: 'Testing if for wimps and cowards',
-//     license: 'GPL',
-//     username: 'roo116',
-//     email: 'hillkarl03@gmail.com',
-//     qsInstructions: 'call my email and leave a text message'
-// };
-
-// var license = data.license;
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+
+// gets licences info from array and addes license and associated links to the badge
 function getBadge(license) {
     if (license === "none") {
         return ''
@@ -51,6 +37,8 @@ function getBadge(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+
+// sets up license section
 function licenseSection(license) {
     if (license === 'none') {
         let section = ``
@@ -63,7 +51,7 @@ function licenseSection(license) {
     return section
 };
 
-
+// generates README markdown
 function generateMarkdown(data) {
 
     return `${getBadge(data.license)}
