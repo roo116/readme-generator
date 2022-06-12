@@ -101,20 +101,6 @@ const questions = [
             }
         }
     },
-    {
-        type: 'list',
-        message: 'Please provide how users may contact you with questions. (Required)',
-        name: 'contact',
-        choices: ['email', 'github'],
-        validate: contactInput => {
-            if (qsInput) {
-                return true;
-            } else {
-                console.log('Please enter instructions on how users may contact you with questions');
-                return false;
-            }
-        }
-    },
 ];
 
 // TODO: Create a function to write README file
