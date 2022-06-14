@@ -21,6 +21,10 @@ go to https://github.com/roo116/readme-generator, fork and then clone the repo.
 
 launch with the command `node index` and answer the prompts.
 
+[Click here for a video demonstration](https://drive.google.com/file/d/1WljAnCIFDy1EOJqKB1Hd3KsLBQTJ-VQt/view?usp=sharing)
+
+Screen shots:  
+
 ![Input Screen](/images/application-screen.png "Input Screen")  
 
 ![Output Screen](/images/readme-compare.png "Output Screen")  
